@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrivia | Seçkin Beslenme ve Esenlik Merkezi</title>
+    <meta name="description" content="Nutrivia - Modern lüks estetiği ve bilimsel temelli beslenme stratejileriyle, kişiye özel sağlıklı yaşam ve esenlik danışmanlığı sunan seçkin merkez." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Defensive polyfill for global and protecting fetch from being overwritten
+      (function() {
+        if (typeof global === 'undefined') {
+          window.global = window;
+        }
+        
+        // Protect window.fetch from being overwritten if it's read-only
+        // This is a common issue with some polyfills in specific browser environments
+        try {
+          var originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return originalFetch; },
+            set: function(v) { 
+              console.warn('Attempted to overwrite window.fetch, ignoring.');
+            },
+            configurable: true
+          });
+        } catch (e) {
+          // If we can't redefine it, it might already be read-only or non-configurable,
+          // which is exactly what leads to the error if something tries to set it with '='.
+          // In that case, we hope that global.fetch assignment (via window.global)
+          // doesn't happen or is handled elsewhere.
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

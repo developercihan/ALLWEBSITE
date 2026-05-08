@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arslan Global Hukuk & Danışmanlık | İstanbul</title>
+    <meta name="description" content="Arslan Global Hukuk & Danışmanlık. Modern, premium ve stratejik çözüm odaklı hukuk hizmetleri." />
+    <script>
+      // Temporary workaround for fetch polyfill issues in some environments
+      const originalDefineProperty = Object.defineProperty;
+      Object.defineProperty = function(obj, prop, descriptor) {
+        if (obj === window && prop === 'fetch') {
+          return obj;
+        }
+        return originalDefineProperty(obj, prop, descriptor);
+      };
+      // If something does window.fetch = ...
+      window.addEventListener('error', (e) => {
+        if (e.message && e.message.includes('Cannot set property fetch')) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

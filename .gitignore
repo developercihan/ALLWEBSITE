@@ -1,0 +1,10 @@
+node_modules/
+.vercel/
+dist/
+build/
+.env
+.DS_Store
+*.log
+.gemini/
+.agent/
+brain/

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap&subset=latin-ext');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant+Garamond", "Georgia", ui-serif, Georgia, serif;
+
+  --color-brand-green: #0F221A;
+  --color-brand-gold: #C8A96B;
+  --color-brand-cream: #F6F1E8;
+  --color-brand-beige: #E5E0D8;
+  --color-brand-ink: #141414;
+  
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-green text-brand-cream font-sans antialiased relative min-h-screen;
+  }
+
+  body::before {
+    content: "";
+    @apply fixed inset-0 z-[100] pointer-events-none opacity-[0.06] mix-blend-overlay;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    filter: brightness(1);
+    animation: grain 8s steps(10) infinite;
+  }
+
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, 5%); }
+    30% { transform: translate(7%, -25%); }
+    40% { transform: translate(-5%, 25%); }
+    50% { transform: translate(-15%, 10%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 15%); }
+    80% { transform: translate(3%, 35%); }
+    90% { transform: translate(-10%, 10%); }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light tracking-tight;
+  }
+}
+
+.glass-nav {
+  @apply bg-brand-green/80 backdrop-blur-xl border-b border-brand-gold/15;
+}
+
+.premium-border {
+  @apply border border-brand-gold/15;
+}
+
+.noise-overlay {
+  background: radial-gradient(circle at 50% 50%, rgba(200, 169, 107, 0.03), transparent);
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+

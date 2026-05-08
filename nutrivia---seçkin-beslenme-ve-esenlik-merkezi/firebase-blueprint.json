@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "Message": {
+      "title": "Message",
+      "description": "A chat message between a user and support.",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "The message content" },
+        "senderId": { "type": "string", "description": "UID of the sender" },
+        "senderEmail": { "type": "string", "description": "Email of the sender" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp" },
+        "chatId": { "type": "string", "description": "Reference to the chat session" }
+      },
+      "required": ["text", "senderId", "createdAt", "chatId"]
+    },
+    "Chat": {
+      "title": "Chat",
+      "description": "A chat session.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The user who started the chat" },
+        "lastMessage": { "type": "string", "description": "Snippet of last message" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Last update" },
+        "status": { "type": "string", "enum": ["active", "closed"] }
+      }
+    }
+  },
+  "firestore": {
+    "chats": {
+      "schema": "Chat",
+      "description": "Collection of chat sessions"
+    },
+    "chats/{chatId}/messages": {
+      "schema": "Message",
+      "description": "Messages within a chat session"
+    }
+  }
+}

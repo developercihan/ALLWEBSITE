@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOVADRIFT DIGITAL | Premium Web Tasarım & Dijital Varlık Stüdyosu</title>
+    <meta name="description" content="NOVADRIFT DIGITAL — Modern, hızlı ve dönüşüm odaklı premium web tasarım çözümleriyle markanızı dijitalde zirveye taşıyoruz. Kurumsal web sitesi, landing page ve SEO altyapısı." />
+    <meta property="og:title" content="NOVADRIFT DIGITAL | Premium Web Tasarım" />
+    <meta property="og:description" content="Markanızın dijitalde sıradan görünmesini engelliyoruz. Tasarım odaklı, premium web çözümleri." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://novadrift-digital.vercel.app" />
+    <link rel="canonical" href="https://novadrift-digital.vercel.app" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>" />
+    <script>
+      /**
+       * Early defensive guard for window.fetch.
+       * Some environments (like iFrames or certain proxies) define window.fetch as a read-only getter.
+       * This script attempts to make it writable before other scripts (like polyfills) try to assign to it.
+       */
+      (function() {
+        try {
+          const target = window;
+          const desc = Object.getOwnPropertyDescriptor(target, 'fetch') || 
+                       Object.getOwnPropertyDescriptor(Object.getPrototypeOf(target), 'fetch');
+          
+          if (desc && (!desc.writable || desc.set === undefined) && desc.configurable !== false) {
+            const originalFetch = target.fetch;
+            let currentFetch = originalFetch;
+            Object.defineProperty(target, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function() { return currentFetch; },
+              set: function(v) { currentFetch = v; }
+            });
+          }
+        } catch (e) {
+          console.warn('Fetch guard could not be applied:', e.message);
+        }
+
+        // Global error sink for the "fetch only has a getter" error which can crash some frameworks
+        window.addEventListener('error', function(event) {
+          if (event.message && (
+            event.message.includes('property fetch') || 
+            event.message.includes('only a getter')
+          )) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
