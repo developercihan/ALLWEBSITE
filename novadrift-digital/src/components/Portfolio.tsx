@@ -5,6 +5,13 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 
 const projects: CardStackItem[] = [
   {
+    id: "ephesus",
+    title: "Ephesus Exchange",
+    description: "Yeni nesil kripto varlık ve finansal teknoloji platformu. Güçlü altyapı, yüksek hız ve kurumsal düzeyde güvenlik çözümleri.",
+    imageSrc: "/portfolio/ephesus.png",
+    href: "https://ephesus-beta.vercel.app",
+  },
+  {
     id: "nutrivia",
     title: "Nutrivia Wellness",
     description: "Lüks ve bütünsel sağlık danışmanlığı için editoryal tasarım. Fonksiyonel tıp ve modern esenlik yaklaşımı.",
