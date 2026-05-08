@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-exchange-bg: #FFFFFF;
+    --color-exchange-card: #F8F9FA;
+    --color-exchange-card-alpha: rgba(248, 249, 250, 0.85);
+    --color-exchange-card-50: rgba(248, 249, 250, 0.5);
+    --color-exchange-hover: #F0F2F5;
+    
+    --color-exchange-primary: #FCD535;
+    --color-exchange-primary-hover: #F0C825;
+    --color-exchange-muted: #848E9C;
+    --color-exchange-green: #0ECB81;
+    --color-exchange-red: #F6465D;
+    
+    --color-text-main: #1E2329;
+    --color-text-inverse: #FFFFFF;
+    --color-border-subtle: rgba(0, 0, 0, 0.05); 
+    --color-border-medium: rgba(0, 0, 0, 0.1);  
+    --color-bg-subtle: rgba(0, 0, 0, 0.05);     
+    --color-bg-medium: rgba(0, 0, 0, 0.1);      
+  }
+
+  :root.dark {
+    --color-exchange-bg: #0B0E11;
+    --color-exchange-card: #1E2329;
+    --color-exchange-card-alpha: rgba(30, 35, 41, 0.85);
+    --color-exchange-card-50: rgba(30, 35, 41, 0.5);
+    --color-exchange-hover: #2B3139;
+    
+    --color-exchange-primary: #FCD535;
+    --color-exchange-primary-hover: #F0C825;
+    --color-exchange-muted: #848E9C;
+    --color-exchange-green: #0ECB81;
+    --color-exchange-red: #F6465D;
+    
+    --color-text-main: #FFFFFF;
+    --color-text-inverse: #0B0E11;
+    --color-border-subtle: rgba(255, 255, 255, 0.05);
+    --color-border-medium: rgba(255, 255, 255, 0.1);
+    --color-bg-subtle: rgba(255, 255, 255, 0.05);
+    --color-bg-medium: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@theme {
+  --color-exchange-dark: var(--color-exchange-bg);
+  --color-exchange-card: var(--color-exchange-card);
+  --color-exchange-hover: var(--color-exchange-hover);
+  --color-exchange-primary: var(--color-exchange-primary);
+  --color-exchange-primary-hover: var(--color-exchange-primary-hover);
+  --color-exchange-muted: var(--color-exchange-muted);
+  --color-exchange-green: var(--color-exchange-green);
+  --color-exchange-red: var(--color-exchange-red);
+  
+  --color-content-main: var(--color-text-main);
+  --color-content-inverse: var(--color-text-inverse);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-medium: var(--color-border-medium);
+  --color-bg-subtle: var(--color-bg-subtle);
+  --color-bg-medium: var(--color-bg-medium);
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer utilities {
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+  
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  
+  .backers-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes data-stream {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(300%);
+    }
+  }
+}
+
+html, body {
+  font-family: inherit;
+  background-color: var(--color-exchange-bg);
+  color: var(--color-text-main);
+}
