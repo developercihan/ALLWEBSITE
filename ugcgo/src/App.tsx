@@ -227,84 +227,6 @@ const ServicesSection = () => {
   );
 };
 
-const ScrollWord = ({ word, progress, range, isHighlight }: any) => {
-  const opacity = useTransform(progress, range, [0.15, 1]);
-  return (
-    <motion.span style={{ opacity }} className={`inline-block mr-[0.25em] mt-1 ${isHighlight ? "text-foreground" : "text-hero-subtitle"}`}>
-      {word}
-    </motion.span>
-  );
-};
-
-const ScrollText = ({ text, highlights = [], className = "" }: { text: string, highlights?: string[], className?: string }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 0.8", "start 0.3"]
-  });
-
-  const words = text.split(" ");
-  return (
-    <div ref={containerRef} className={`flex flex-wrap ${className}`}>
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + (1 / words.length);
-        const cleanWord = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
-        const isHighlight = highlights.includes(cleanWord);
-        return <ScrollWord key={i} word={word} progress={scrollYProgress} range={[start, end]} isHighlight={isHighlight} />;
-      })}
-    </div>
-  );
-};
-
-const MissionSection = () => (
-  <section className="py-24 md:py-40 px-6 md:px-12 xl:px-28 relative overflow-hidden bg-[#050505]">
-    <div className="max-w-7xl mx-auto relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
-        <motion.div {...fadeUp(0.1)}>
-          <h2 className="text-[10vw] md:text-7xl font-medium leading-[0.95] tracking-tighter mb-8 md:mb-12">
-            Biz sadece video <br /><span className="text-white/40">çekmiyoruz;</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-white/70 leading-relaxed font-light mb-10">
-            Markaların ürünlerini insanların kaydırma alışkanlıklarını durduracak dijital mıknatıslara dönüştürüyoruz.
-          </p>
-          <div className="space-y-6">
-            {[
-              { title: "Veri Odaklı Kreatif", desc: "Test edilmiş kanca (hook) yapıları ile %200 daha fazla tutma oranı." },
-              { title: "Psikolojik Tetikleyiciler", desc: "Tüketici davranışlarını analiz ederek satın alma arzusunu uyandırıyoruz." }
-            ].map((item, i) => (
-              <div key={i} className="flex gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/8 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                  <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
-                </div>
-                <div className="text-left">
-                  <h4 className="text-lg font-medium mb-1">{item.title}</h4>
-                  <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-        
-        <motion.div {...fadeUp(0.3)} className="relative">
-          <div className="aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" 
-              alt="Digital Content Creation" 
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-          </div>
-          <div className="absolute -bottom-8 -left-8 md:-bottom-12 md:-left-12 bg-white/10 backdrop-blur-3xl border border-white/20 p-8 rounded-3xl hidden sm:block">
-            <span className="block text-4xl font-bold mb-1 text-white">94%</span>
-            <span className="text-xs uppercase tracking-widest text-white/50">Daha Fazla Etkileşim</span>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  </section>
-);
-
 const StatsSection = () => (
   <section className="py-24 md:py-32 bg-black border-y border-white/5">
     <div className="max-w-7xl mx-auto px-6">
@@ -331,6 +253,51 @@ const StatsSection = () => (
   </section>
 );
 
+const MissionSection = () => (
+  <section className="py-24 md:py-40 px-6 md:px-12 xl:px-28 relative overflow-hidden bg-[#050505]">
+    <div className="max-w-7xl mx-auto relative z-10">
+      <div className="flex flex-col items-center text-center">
+        <motion.div {...fadeUp(0.1)} className="w-[90vw] max-w-[500px] aspect-square rounded-full mb-20 relative p-[16px] md:p-[24px] bg-white/5 border border-white/10 shadow-[0_0_100px_rgba(255,255,255,0.05)] backdrop-blur-xl overflow-hidden group">
+          <div className="absolute inset-0 rounded-full border-[2px] border-white/10 shadow-[inset_0_0_80px_rgba(255,255,255,0.05)] pointer-events-none"></div>
+          <div className="w-full h-full rounded-full overflow-hidden relative shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] border border-white/10 bg-black/40">
+             <img 
+              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" 
+              alt="Digital Content" 
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+          </div>
+        </motion.div>
+
+        <motion.div {...fadeUp(0.2)} className="max-w-4xl">
+          <h2 className="text-[9vw] md:text-7xl font-medium leading-[0.95] tracking-tighter mb-12">
+            Biz sadece video <br /><span className="text-white/40">çekmiyoruz;</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-white/70 leading-relaxed font-light mb-16 max-w-3xl mx-auto">
+            Markaların ürünlerini insanların kaydırma alışkanlıklarını durduracak dijital mıknatıslara dönüştürüyoruz.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            {[
+              { title: "Veri Odaklı Kreatif", desc: "Test edilmiş kanca (hook) yapıları ile %200 daha fazla tutma oranı." },
+              { title: "Psikolojik Tetikleyiciler", desc: "Tüketici davranışlarını analiz ederek satın alma arzusunu uyandırıyoruz." }
+            ].map((item, i) => (
+              <div key={i} className="flex gap-6 p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-medium mb-2">{item.title}</h4>
+                  <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
 const SolutionSection = () => {
   const funnelSteps = [
     { step: "01", title: "Yakala", desc: "Etkili bir 'hook' ile kaydırmayı durdur.", icon: "⚡", color: "from-amber-400 to-orange-600" },
@@ -341,7 +308,6 @@ const SolutionSection = () => {
 
   return (
     <section className="py-24 md:py-48 px-6 md:px-12 xl:px-28 bg-[#050505] relative overflow-hidden">
-      {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full -mr-64 -mt-64"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/5 blur-[150px] rounded-full -ml-64 -mb-64"></div>
 
@@ -365,7 +331,6 @@ const SolutionSection = () => {
               {...fadeUp(0.1 * i)}
               className="group relative p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 transition-all duration-500 hover:bg-white/[0.06] hover:border-white/20 hover:-translate-y-2 flex flex-col h-full text-left"
             >
-              {/* Card Glow */}
               <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 rounded-[2.5rem]`}></div>
               
               <div className="flex justify-between items-start mb-16">
@@ -384,7 +349,6 @@ const SolutionSection = () => {
                 {item.desc}
               </p>
 
-              {/* Progress Line for Desktop */}
               {i < 3 && (
                 <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[1px] bg-white/10 z-20"></div>
               )}
@@ -459,7 +423,6 @@ const TestimonialsSection = () => {
                 transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
                 className="w-full bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[48px] p-8 md:p-12 relative overflow-hidden"
               >
-                {/* Decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
                 
                 <div className="relative z-10 flex flex-col h-full justify-between">
@@ -577,4 +540,3 @@ export default function App() {
     </div>
   );
 }
-
