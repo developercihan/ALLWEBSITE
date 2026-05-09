@@ -333,40 +333,61 @@ const StatsSection = () => (
 
 const SolutionSection = () => {
   const funnelSteps = [
-    { step: "01", title: "Yakala", desc: "Etkili bir 'hook' ile kaydırmayı durdur.", icon: "⚡" },
-    { step: "02", title: "İkna Et", desc: "Ürünün sorun çözen yanını videoyla göster.", icon: "💎" },
-    { step: "03", title: "Yönlendir", desc: "Net bir eylem çağrısı ile siteye çek.", icon: "🎯" },
-    { step: "04", title: "Dönüştür", desc: "Video-First sayfasıyla satışı kapat.", icon: "🚀" }
+    { step: "01", title: "Yakala", desc: "Etkili bir 'hook' ile kaydırmayı durdur.", icon: "⚡", color: "from-amber-400 to-orange-600" },
+    { step: "02", title: "İkna Et", desc: "Ürünün sorun çözen yanını videoyla göster.", icon: "💎", color: "from-blue-400 to-indigo-600" },
+    { step: "03", title: "Yönlendir", desc: "Net bir eylem çağrısı ile siteye çek.", icon: "🎯", color: "from-rose-400 to-red-600" },
+    { step: "04", title: "Dönüştür", desc: "Video-First sayfasıyla satışı kapat.", icon: "🚀", color: "from-emerald-400 to-teal-600" }
   ];
 
   return (
-    <section className="py-24 md:py-40 px-6 md:px-12 xl:px-28 bg-white text-black relative">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 mb-20 md:mb-32">
-          <motion.div {...fadeUp(0.1)} className="max-w-2xl text-left">
-            <span className="text-xs font-bold tracking-[0.3em] uppercase text-black/40 mb-6 block">YAKLAŞIMIMIZ</span>
-            <h2 className="text-[11vw] md:text-8xl font-medium leading-[0.9] tracking-tighter">
-              Huni Odaklı <br /> <span className="text-black/30">Üretim.</span>
+    <section className="py-24 md:py-48 px-6 md:px-12 xl:px-28 bg-[#050505] relative overflow-hidden">
+      {/* Background Ornaments */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full -mr-64 -mt-64"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/5 blur-[150px] rounded-full -ml-64 -mb-64"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-24 md:mb-32">
+          <motion.div {...fadeUp(0.1)} className="max-w-3xl text-left">
+            <span className="text-xs font-bold tracking-[0.4em] uppercase text-white/30 mb-6 block">METODOLOJİMİZ</span>
+            <h2 className="text-[12vw] md:text-8xl font-medium leading-[0.85] tracking-tighter text-white">
+              Huni Odaklı <br /> <span className="text-white/20">Performans.</span>
             </h2>
           </motion.div>
-          <motion.p {...fadeUp(0.2)} className="text-lg md:text-xl text-black/60 max-w-sm mb-4 text-left">
-            Her videoyu satış tünelinizin belirli bir aşaması için optimize ediyoruz.
+          <motion.p {...fadeUp(0.2)} className="text-xl md:text-2xl text-white/40 max-w-md font-light leading-relaxed text-left">
+            İzleyicinin dikkatini yakalayan ve onu müşteriye dönüştüren matematiksel bir akış.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
           {funnelSteps.map((item, i) => (
             <motion.div 
               key={i}
               {...fadeUp(0.1 * i)}
-              className="p-8 md:p-10 rounded-[3rem] bg-black/5 hover:bg-black/10 transition-all border border-black/5 flex flex-col h-full group text-left"
+              className="group relative p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 transition-all duration-500 hover:bg-white/[0.06] hover:border-white/20 hover:-translate-y-2 flex flex-col h-full text-left"
             >
-              <div className="flex justify-between items-start mb-12">
-                <span className="text-4xl">{item.icon}</span>
-                <span className="text-sm font-bold opacity-20">{item.step}</span>
+              {/* Card Glow */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 rounded-[2.5rem]`}></div>
+              
+              <div className="flex justify-between items-start mb-16">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} p-[1px] group-hover:scale-110 transition-transform duration-500`}>
+                  <div className="w-full h-full rounded-2xl bg-[#0a0a0a] flex items-center justify-center text-3xl">
+                    {item.icon}
+                  </div>
+                </div>
+                <span className="text-sm font-bold text-white/10 tracking-widest">{item.step}</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-medium mb-4 group-hover:translate-x-2 transition-transform">{item.title}</h3>
-              <p className="text-black/50 leading-relaxed text-sm md:text-base">{item.desc}</p>
+
+              <h3 className="text-3xl font-medium text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all">
+                {item.title}
+              </h3>
+              <p className="text-white/40 leading-relaxed text-lg font-light group-hover:text-white/60 transition-colors">
+                {item.desc}
+              </p>
+
+              {/* Progress Line for Desktop */}
+              {i < 3 && (
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[1px] bg-white/10 z-20"></div>
+              )}
             </motion.div>
           ))}
         </div>
