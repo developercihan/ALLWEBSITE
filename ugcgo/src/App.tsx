@@ -90,8 +90,8 @@ const HeroSection = () => (
       <motion.div {...fadeUp(0.1)} className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 bg-white/5 backdrop-blur-md px-3 md:px-4 py-2 rounded-full border border-white/10">
         <div className="flex -space-x-2 md:-space-x-3">
           {["avatar-1.png", "avatar-2.png", "avatar-3.png"].map((src, i) => (
-            <div key={i} className={`w-7 h-7 md:w-9 md:h-9 rounded-full border-2 border-black overflow-hidden relative ${i === 0 ? 'bg-white/20 z-[3]' : i === 1 ? 'bg-white/40 z-[2]' : 'bg-white/60 z-[1]'}`}>
-              <img src={`/${src}`} alt="Avatar" className="w-full h-full object-cover mix-blend-overlay" />
+            <div key={i} className={`w-7 h-7 md:w-9 md:h-9 rounded-full border-2 border-black/50 overflow-hidden relative ${i === 0 ? 'z-[3]' : i === 1 ? 'z-[2]' : 'z-[1]'}`}>
+              <img src={`/${src}`} alt="Avatar" className="w-full h-full object-cover shadow-sm" />
             </div>
           ))}
         </div>
