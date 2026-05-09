@@ -8,7 +8,7 @@ const projects: CardStackItem[] = [
     id: "ugcgo",
     title: "UGCgo Agency",
     description: "E-ticaret markaları için performans odaklı dikey video ve dönüşüm stratejileri platformu. İzleyiciyi yakalayan dijital mıknatıslar.",
-    imageSrc: "/portfolio/ugcgo.png",
+    imageSrc: "/portfolio/ugcgo_mobile.png",
     href: "https://ugcgo-chi.vercel.app",
   },
   {
