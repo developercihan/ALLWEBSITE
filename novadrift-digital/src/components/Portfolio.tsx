@@ -5,6 +5,13 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 
 const projects: CardStackItem[] = [
   {
+    id: "ugcgo",
+    title: "UGCgo Agency",
+    description: "E-ticaret markaları için performans odaklı dikey video ve dönüşüm stratejileri platformu. İzleyiciyi yakalayan dijital mıknatıslar.",
+    imageSrc: "/portfolio/ugcgo.png",
+    href: "https://ugcgo-chi.vercel.app",
+  },
+  {
     id: "ephesus",
     title: "Ephesus Exchange",
     description: "Yeni nesil kripto varlık ve finansal teknoloji platformu. Güçlü altyapı, yüksek hız ve kurumsal düzeyde güvenlik çözümleri.",
