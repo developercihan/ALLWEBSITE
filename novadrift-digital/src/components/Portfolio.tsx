@@ -31,6 +31,13 @@ const projects: CardStackItem[] = [
     description: "Hukuk ve danışmanlık hizmetleri için prestijli, güven veren ve modern dijital kimlik çözümü.",
     imageSrc: "/portfolio/arslan-hukuk.png",
     href: "https://arslan-global-hukuk.vercel.app",
+  },
+  {
+    id: "ugcgo",
+    title: "UGCgo",
+    description: "Performans odaklı, veri güdümlü dikey video ve dönüşüm yönetimi ajansı. İçerik üretiminde yeni nesil çözüm ortağınız.",
+    imageSrc: "/portfolio/ugcgo.png",
+    href: "https://ugcgo-agency.vercel.app",
   }
 ];
 
