@@ -466,6 +466,116 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    <!-- Menta & Co. Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- MENTA & CO. LUXURY BRAND OVERRIDES -->
+    <style>
+      :root {
+        --color-base-background-1: 253, 251, 247 !important; /* #FDFBF7 Krem */
+        --color-base-background-2: 244, 241, 234 !important; /* #F4F1EA Ikincil Krem */
+        --color-base-text: 42, 42, 42 !important; /* #2A2A2A Antrasit */
+        --color-base-solid-button-labels: 255, 255, 255 !important;
+        --color-base-accent-1: 143, 158, 139 !important; /* #8F9E8B Adacayi Yesili */
+        --color-base-accent-2: 197, 160, 89 !important; /* #C5A059 Mat Gold */
+        --color-base-outline-button-labels: 42, 42, 42 !important;
+        
+        --font-body-family: 'Inter', sans-serif !important;
+        --font-heading-family: 'Playfair Display', serif !important;
+        --font-heading-weight: 400 !important;
+        --font-body-weight: 300 !important;
+
+        --buttons-radius: 2px !important;
+        --inputs-radius: 2px !important;
+        --badge-corner-radius: 0px !important;
+      }
+
+      /* Luxury Design Aesthetics & Micro-Animations */
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: 'Playfair Display', serif !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.03em !important;
+        color: #2A2A2A !important;
+      }
+      
+      .button, .btn, .shopify-payment-button__button {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.15em !important;
+        font-size: 1.2rem !important;
+        border-radius: 2px !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        border: 1px solid transparent !important;
+      }
+
+      .button--primary, .btn--primary, .shopify-payment-button__button--unbranded {
+        background-color: #8F9E8B !important;
+        color: #FDFBF7 !important;
+      }
+
+      .button--primary:hover, .btn--primary:hover, .shopify-payment-button__button--unbranded:hover {
+        background-color: #2A2A2A !important;
+        color: #FDFBF7 !important;
+        letter-spacing: 0.18em !important;
+      }
+
+      .button--secondary, .btn--secondary {
+        background-color: transparent !important;
+        border: 1px solid #2A2A2A !important;
+        color: #2A2A2A !important;
+      }
+
+      .button--secondary:hover, .btn--secondary:hover {
+        background-color: #2A2A2A !important;
+        color: #FDFBF7 !important;
+      }
+
+      /* Premium Card Overrides */
+      .card, .product-card, .collection-card {
+        border-radius: 2px !important;
+        border: none !important;
+        background-color: #F4F1EA !important;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease !important;
+      }
+
+      .card:hover, .product-card:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 10px 20px rgba(42, 42, 42, 0.05) !important;
+      }
+
+      .card__inner img {
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      }
+
+      .card:hover .card__inner img {
+        transform: scale(1.05) !important;
+      }
+
+      /* Header & Footer Styling */
+      .header {
+        background-color: #FDFBF7 !important;
+        border-bottom: 1px solid rgba(42, 42, 42, 0.05) !important;
+      }
+
+      .footer {
+        background-color: #F4F1EA !important;
+        border-top: 1px solid rgba(42, 42, 42, 0.05) !important;
+      }
+
+      .announcement-bar {
+        background-color: #8F9E8B !important;
+        color: #FDFBF7 !important;
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.1em !important;
+        font-size: 1.1rem !important;
+      }
+
+      /* Clean Urgency Counter Disable */
+      .urgency-counter, .cart-countdown, .shrine-countdown {
+        display: none !important;
+      }
+    </style>
   </head>
 
   <body class="gradient link-btns--{{ settings.link_btn_hover }} action-btns--{{ settings.action_btn_hover }}"{% if is_rtl %} data-rtl="true"{% endif %}>
