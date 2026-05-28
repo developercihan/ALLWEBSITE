@@ -920,7 +920,7 @@
       "disabled": true,
       "settings": {
         "display_id": false,
-        "title": "You may also like",
+        "title": "İlginizi Çekebilecek Diğer Ürünler",
         "title_highlight_1": "solid-color",
         "title_highlight_1_gradient": "linear-gradient(57deg, rgba(249, 119, 255, 1) 8%, rgba(54, 212, 255, 1) 47%, rgba(43, 252, 135, 1) 83%)",
         "title_highlight_1_bg-color": "#f9efff",
@@ -1026,7 +1026,7 @@
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "title": "Image/Video slider",
+        "title": "Menta Ritüeli Uygulama Detayları",
         "title_highlight_1": "solid-color",
         "title_highlight_1_gradient": "linear-gradient(57deg, rgba(249, 119, 255, 1) 8%, rgba(54, 212, 255, 1) 47%, rgba(43, 252, 135, 1) 83%)",
         "title_highlight_1_bg-color": "#F9EFFF",
@@ -1445,7 +1445,7 @@
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "title": "Image/Video Slider",
+        "title": "Menta Mucizesi Uygulama",
         "title_highlight_1": "solid-color",
         "title_highlight_1_gradient": "linear-gradient(57deg, rgba(249, 119, 255, 1) 8%, rgba(54, 212, 255, 1) 47%, rgba(43, 252, 135, 1) 83%)",
         "title_highlight_1_bg-color": "#f9efff",
@@ -1663,7 +1663,7 @@
         "custom_colors_text": "#2E2A39",
         "desktop_content_position": "above",
         "desktop_content_alignment": "center",
-        "title": "Trustpilot reviews",
+        "title": "Kullanıcı Değerlendirmeleri",
         "title_highlight_1": "solid-color",
         "title_highlight_1_gradient": "linear-gradient(57deg, rgba(249, 119, 255, 1) 8%, rgba(54, 212, 255, 1) 47%, rgba(43, 252, 135, 1) 83%)",
         "title_highlight_1_bg-color": "#F9EFFF",

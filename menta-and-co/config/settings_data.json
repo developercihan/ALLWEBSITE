@@ -87,7 +87,7 @@
     "card_text_alignment": "left",
     "card_color_scheme": "background-1",
     "product_cards_badge_push_sides": true,
-    "product_cards_custom_badges_list": "BEST DEAL, BEST SELLER, [percentage] OFF",
+    "product_cards_custom_badges_list": "EN İYİ FIRSAT, EN ÇOK SATAN, %[percentage] İNDİRİM",
     "product_card_title_limited_lines": "1",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
@@ -179,10 +179,10 @@
     "cart_trust_badges_width": 100,
     "enable_cart_discount": false,
     "enable_cart_timer": false,
-    "cart_timer_text": "<strong>Cart reserved for [timer] more minutes!</strong>",
+    "cart_timer_text": "<strong>Sepetinizdeki ürünler [timer] dakika boyunca adınıza rezerve edilmiştir!</strong>",
     "enable_cart_progress_bar": false,
-    "cart_progress_message": "Spend [amount] more to get FREE shipping!",
-    "cart_progress_success_message": "Congrats! You get FREE shipping! 🎉",
+    "cart_progress_message": "Ücretsiz kargo için [amount] daha sepetinize ekleyin!",
+    "cart_progress_success_message": "Tebrikler! Ücretsiz kargo hakkı kazandınız! 🎉",
     "cart_progress_icon": "local_shipping",
     "enable_cart_upsell_1": false,
     "cart_upsell_1_product": "thedogface-designer-dog-jacket",
@@ -508,9 +508,9 @@
           "text_KU3Twd": {
             "type": "text",
             "settings": {
-              "heading": "Heading",
+              "heading": "Menta & Co.",
               "block_headings_font_size": 1,
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>",
+              "subtext": "<p>Kore bitkisel formülleriyle ayak bakımında lüks arınma ritüeli. Kendinize ayırdığınız bu özel bakım anını bebeksi yumuşaklıkla taçlandırın.</p>",
               "width_desktop": 3,
               "width_mobile": "2"
             }
@@ -518,7 +518,7 @@
           "1c647602-cc00-4009-a058-976435c8ee9e": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
+              "heading": "Hızlı Menü",
               "block_headings_font_size": 1,
               "menu": "footer",
               "font_size": 14,
@@ -548,7 +548,7 @@
           "payment_enable": true,
           "enabled_payment_types": "",
           "show_policy": false,
-          "branding_text": "Powered by <a href=\"https://shrinesolutions.com/\" target=\"_blank\" title=\"https://shrinesolutions.com/\">Shrine</a>",
+          "branding_text": "© 2026 Menta & Co. Tüm Hakları Saklıdır.",
           "margin_top": 0,
           "padding_top": 32,
           "padding_bottom": 20
