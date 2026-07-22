@@ -1,0 +1,117 @@
+.productsSection {
+  padding: 10vw 5vw;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--foreground);
+  line-height: 1.1;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 15vh; /* Large gap for continuous stream */
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Asymmetric 90/10 or split */
+@media (min-width: 768px) {
+  .productCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .productCard:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 45%;
+    aspect-ratio: 3/4;
+  }
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.productCard:hover .image {
+  transform: scale(1.05);
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .info {
+    width: 45%;
+    padding: 0 5%;
+  }
+}
+
+.productTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--foreground);
+  font-weight: 400;
+}
+
+.productDesc {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+.ingredients {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ingredientBadge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--foreground);
+  border-radius: 999px; /* This is an exception to extremism for "pill" tags */
+}
+
+.buyBtn {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
