@@ -5,6 +5,13 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 
 const projects: CardStackItem[] = [
   {
+    id: "dilan-celebi",
+    title: "Dilan Çelebi Takviye",
+    description: "Bilimsel temelli, kişiselleştirilmiş premium takviye ürünleri. Antigravity hissi ile modern ve minimalist dijital deneyim.",
+    imageSrc: "/portfolio/dilan.png",
+    href: "https://dilan-celebi-takviye.vercel.app", // Placeholder, will update after manual deploy
+  },
+  {
     id: "ephesus",
     title: "Ephesus Exchange",
     description: "Yeni nesil kripto varlık ve finansal teknoloji platformu. Güçlü altyapı, yüksek hız ve kurumsal düzeyde güvenlik çözümleri.",
